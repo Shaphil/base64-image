@@ -22,5 +22,5 @@ function base64ToImage(dir) {
 }
 
 function checkBase64(raw) {
-  return raw && typeof(raw) == 'string' && raw.match(/^data:image\/.+;base64,/)
+  return raw && typeof(raw) === 'string' && raw.match(/^data:image\/.+;base64,/);
 }

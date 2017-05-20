@@ -6,7 +6,7 @@ module.exports = base64ToImage;
 function base64ToImage(dir) {
   return function(req, res, next) {
     var raw = req.body.base64;
-    var filename = req.params.filename ? req.params.filename : 'demo.png';
+    var filename = req.body.filename ? req.body.filename : 'demo.png';
     if (!checkBase64(raw)) return next();
     var base64 = raw.replace(/^data:image\/.+;base64,/, "");
     var abs = path.join(dir, filename);
